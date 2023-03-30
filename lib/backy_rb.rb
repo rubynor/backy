@@ -3,6 +3,7 @@
 require "active_support/core_ext/integer/time"
 require "active_support/core_ext/object/blank"
 
+require_relative "backy/cli"
 require_relative "backy/configuration"
 require_relative "backy/app_config"
 require_relative "backy/db"
