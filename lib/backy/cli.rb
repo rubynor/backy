@@ -40,7 +40,7 @@ module Backy
 
     desc "list", "Display a list of available backups, both locally and in remote storage"
     def list
-      list = Backy::List.call
+      list = Backy::List.new.call
       list.each do |list_item|
         puts "#{list_item.local? ? "local" : "     "} #{list_item.remote? ? "remote" : "      "} : #{list_item.dump_file}"
       end
