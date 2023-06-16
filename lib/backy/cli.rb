@@ -10,7 +10,7 @@ module Backy
 
     desc "push", "Push the local dump to a remote storage location"
     def push
-      file_name = Backy::List.new.select(&:local?).last
+      file_name = Backy::List.new.call.select(&:local?).last
       Backy::S3Save.new(file_name: file_name).call
       File.delete(file_name) if File.exist?(file_name)
       puts "Backup pushed to remote storage: #{file_name}"
